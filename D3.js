@@ -148,13 +148,13 @@ console.log("Female characters:", femaleCharacters);
 
 console.log("🔹 ESERCIZIO 4");
 
-eyecolor = {
+const eyecolor = {
   blue: [],
   yellow: [],
   brown: [],
   red: [],
-  bluegray: [],
-  na: []
+  "blue-gray": [],
+  "n/a": []
 };
 
 /* ESERCIZIO 5
@@ -179,10 +179,10 @@ for (i = 0; i < starWarsCharacters.length; i++)
       eyecolor.red.push(starWarsCharacters[i]);
       break;
     case "blue-gray":
-      eyecolor.bluegray.push(starWarsCharacters[i]);
+      eyecolor["blue-gray"].push(starWarsCharacters[i]);
       break;
     default:
-      eyecolor.na.push(starWarsCharacters[i]);
+      eyecolor["n/a"].push(starWarsCharacters[i]);
   }
 
 console.log(eyecolor);
