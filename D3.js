@@ -118,9 +118,11 @@ let characters = [];
 console.log("🔹 ESERCIZIO 2");
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  characters = starWarsCharacters[i].name;
-  console.log("Character: ", characters);
+  const character = starWarsCharacters[i];
+  characters.push(character.name);
 }
+
+console.log(characters);
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
@@ -131,11 +133,13 @@ console.log("🔹 ESERCIZIO 3");
 let femaleCharacters = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  femaleCharacters = starWarsCharacters[i].gender;
-  if (femaleCharacters === "female") {
-    console.log("Female character: ", starWarsCharacters[i].name);
+  const character = starWarsCharacters[i];
+  if (starWarsCharacters[i].gender === "female") {
+    femaleCharacters.push(starWarsCharacters[i]);
   }
 }
+
+console.log("Female characters:", femaleCharacters);
 
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
@@ -246,17 +250,17 @@ console.log(starWarsCharacters);
 
 console.log("🔹 ESERCIZIO 9");
 
-// ! DA RIVEDERE
+console.log("Prima", characters.length);
 
-console.log("Prima", starWarsCharacters.length);
-
-for (i = 0; i < starWarsCharacters.length; i++) {
-  if (starWarsCharacters[i].gender === femaleCharacters) {
-    starWarsCharacters[i].pop;
+for (let i = 0; i < characters.length; i++) {
+  for (let y = 0; y < femaleCharacters.length; y++) {
+    if (characters[i] === femaleCharacters[y].name) {
+      characters.splice(i, 1);
+    }
   }
 }
 
-console.log("Dopo", starWarsCharacters.length);
+console.log("Dopo", characters.length);
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
